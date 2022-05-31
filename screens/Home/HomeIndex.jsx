@@ -1,9 +1,10 @@
 import { useNavigation } from "@react-navigation/native";
-import React from "react";
-import { View, Text, Pressable, Image, ScrollView, FlatList, useWindowDimensions } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Pressable, ScrollView, FlatList, TouchableOpacity } from "react-native";
 import tailwind from "tailwind-rn";
 import colors from "../../assets/colors";
 import ArrowDown from "../../assets/icons/ArrowDown";
+import ArrowUp from "../../assets/icons/ArrowUp";
 import Cart from "../../assets/icons/Cart";
 import FilterIcon from "../../assets/icons/FilterIcon";
 import { foodCategories } from "../../base/JsonData/FoodCategories";
@@ -14,18 +15,12 @@ import Card3 from "../../components/Cards/Card3";
 import Card4 from "../../components/Cards/Card4";
 import GeneralScreen from "../../components/General/GeneralScreen";
 import SearchInput from "../../components/General/Inputs/SearchInput";
-import CartScreenNavigation from "../../customs/ScreenNavigations/CartScreenNavigation/CartScreenNavigation";
-import CartScreen from "../Cart/CartScreen";
-import Category from "../Category/Category";
-import DessertsScreen from "../DessertsScreen/DessertsScreen";
-import ProductScreen from "../ProductScreen/ProductScreen";
-import RestaurantPreview from "../RestaurantPreview/RestaurantPreview";
-import Restaurants from "../Restaurants/Restaurants";
 
 const HomeIndex = () => {
   const navigation = useNavigation()
   const FoodCategoryItems = foodCategories.data;
   const PopularFoods = popularFoods.data
+  const [userLocation, showUserLocation] = useState(false)
 
   const renderFoodCategoryItems = ({item}) => {
       return (
@@ -74,7 +69,9 @@ const HomeIndex = () => {
       <View style={[tailwind("px-4 pb-2")]}>
         <Text style={{ color: colors.gray }}>Delivered to</Text>
 
-        <View style={[tailwind(" flex-row items-start mt-2")]}>
+        <Pressable 
+        onPress={()=> showUserLocation(!userLocation)}
+        style={[tailwind(" flex-row items-center mt-2")]}>
           <Text
             style={{
               textTransform: "capitalize",
@@ -87,8 +84,18 @@ const HomeIndex = () => {
             Current location
           </Text>
 
-          <ArrowDown color={colors.secondaryColor} width="28" height="28" />
+          <View style={[tailwind("")]}>
+            {!userLocation && <ArrowDown color={colors.secondaryColor} width="28" height="28" />}
+            {userLocation && <ArrowUp color={colors.secondaryColor} width="28" height="28" />}
+          </View>
+        </Pressable>
+        {userLocation && (
+          <View>
+          <Text style={[tailwind("capitalize text-sm pt-1"),{
+            color: colors.textColor
+          }]}>No.4 omotala Estate Ikeja, Lagos Nigeria.</Text>
         </View>
+        )}
       </View>
       </View>
     <ScrollView style={[tailwind(" bg-gray-50 w-full   ")]} showsVerticalScrollIndicator={false} >

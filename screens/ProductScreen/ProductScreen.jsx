@@ -20,7 +20,7 @@ const ProductScreen = ({navigation}) => {
     
     <View style={[tailwind("h-full w-full bg-gray-50")]}>
 
-      <View style={[tailwind("w-full h-2/6 relative ")]}>
+      <View style={[tailwind("w-full h-2/6 relative z-10 ")]}>
       
         <ImageBackground
           source={require("../../assets/img/food1.jpg")}
@@ -46,7 +46,7 @@ const ProductScreen = ({navigation}) => {
         </ImageBackground>
       </View>
 
-        <View style={[tailwind("w-full bg-gray-50  pt-6 relative  -mt-7"), {borderTopStartRadius: 35, borderTopEndRadius: 35}]}>
+        <View style={[tailwind("w-full bg-gray-50  pt-6 relative z-20  -mt-7"), {borderTopStartRadius: 35, borderTopEndRadius: 35}]}>
             <View style={[tailwind("w-12 h-12 bg-gray-50 rounded-full absolute -top-6 right-4 justify-center items-center"), {...elevate(2)}]}>
                 <Favourity color={colors.primaryColor} width="22"  height="22" />
             </View>

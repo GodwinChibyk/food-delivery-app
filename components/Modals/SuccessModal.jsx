@@ -33,7 +33,7 @@ const SuccessModal = ({closeModal}) => {
                     Have a nice day!
                 </Text>
                 <View style={[tailwind("items-center mt-8 mb-6")]}>
-                <Pressable onPress={()=> navigation.navigate(HomeIndex)} >
+                <Pressable onPress={()=> navigation.navigate("Home")} >
                     <Text style={[tailwind(""),{fontFamily:"Metropolis-SemiBold",fontSize:17,color:colors.primaryColor}]}>
                         Back to Home
                     </Text>

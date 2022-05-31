@@ -29,7 +29,7 @@ const RestaurantPreview = ({ navigation}) => {
   return (
     <>
       <View style={[tailwind("h-full w-full bg-gray-50")]}>
-        <View style={[tailwind("w-full h-2/6 relative ")]}>
+        <View style={[tailwind("w-full h-2/6 relative z-10 ")]}>
           <ImageBackground
             source={require("../../assets/img/res1.jpg")}
             resizeMode="cover"
@@ -67,7 +67,7 @@ const RestaurantPreview = ({ navigation}) => {
 
         <View
           style={[
-            tailwind("w-full bg-gray-50   pt-6 relative  -mt-7"),
+            tailwind("w-full bg-gray-50   pt-6 relative z-20  -mt-7"),
             { borderTopStartRadius: 35, borderTopEndRadius: 35 },
           ]}
         >
