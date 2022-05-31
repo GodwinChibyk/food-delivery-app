@@ -1,0 +1,25 @@
+const colors = {
+    textColor: "#4a4b4d",
+    primaryColor: "#3d1d82",
+    primaryColorTransparent:  "#3d1d82a1",
+    secondaryColor: "#ff9900",
+    white: "rgba(256,256,256,1)",
+    fair: "#f7f7f7",
+    pureWhite: "rgb(256,256,256)",
+    black: "black",
+    gray: "#7c7d7e",
+    lightGray: "#b6b7b7",
+    overLayColor: "rgba(0,0,0,0.3)",
+    lightPrimary: "#E5E5FD",
+    green: "#2CDE0F",
+    darkGreen: "#0AAF1B",
+    purple: "#BD10CC",
+    yellow: "#DADE05",
+    lightYellow: "#FFDB1D",
+    blue: "#1B54E5",
+    red: "#F02430",
+    lightPurple: "#D87CE0",
+    lightBlue: "#1B54E5",
+  };
+  
+  export default colors;
