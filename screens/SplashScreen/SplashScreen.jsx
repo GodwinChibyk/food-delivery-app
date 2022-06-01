@@ -10,7 +10,7 @@ const SplashScreen = () => {
     { backgroundColor: colors.fair },]}>
       <Image 
       source={require("../../assets/img/splash.png")}
-      resizeMode="contain"
+      resizeMode="cover"
       style={[tailwind("w-full h-full")]}
        />
     </View>
